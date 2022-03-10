@@ -1,0 +1,2 @@
+# triping
+Fix heroku downtime 
