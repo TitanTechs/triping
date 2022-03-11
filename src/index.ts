@@ -54,6 +54,7 @@ const PORT = process.env.PORT
 
 server.listen(PORT, function () {
     // console.log(server.address().address)
+    //@ts-ignore
     console.log(`server is listern on port ${server.address().port}`);
 })
 schedule.cronJob.start();
