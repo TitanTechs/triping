@@ -50,5 +50,10 @@ const server = http.createServer(function (req, res) {
 })
 
 
-server.listen(process.env.PORT || 3000)
+const PORT = process.env.PORT
+
+server.listen(PORT, function () {
+    // console.log(server.address().address)
+    console.log(`server is listern on port ${server.address().port}`);
+})
 schedule.cronJob.start();
