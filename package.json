@@ -1,0 +1,38 @@
+{
+  "name": "triping",
+  "version": "1.0.0",
+  "description": "Fix heroku downtime",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsup",
+    "start": "node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TitanTechs/triping.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TitanTechs/triping/issues"
+  },
+  "homepage": "https://github.com/TitanTechs/triping#readme",
+  "dependencies": {
+    "cron": "^1.8.2",
+    "dotenv": "^16.0.0",
+    "undici": "^4.15.1"
+  },
+  "tsup": {
+    "entry": [
+      "src/index.ts"
+    ],
+    "splitting": false,
+    "sourcemap": true,
+    "clean": true
+  },
+  "devDependencies": {
+    "@types/cron": "^1.7.3",
+    "tsup": "^5.12.1"
+  }
+}
