@@ -7,7 +7,7 @@ class Schedule {
     cronJob: CronJob;
 
     constructor() {
-        this.cronJob = new CronJob("* * * * *", async () => {
+        this.cronJob = new CronJob("*/5 * * * *", async () => {
             try {
                 await this.pingApis();
                 await this.pingItsSelf();
@@ -50,11 +50,9 @@ const server = http.createServer(function (req, res) {
 })
 
 
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 3333
 
 server.listen(PORT, function () {
-    // console.log(server.address().address)
-    //@ts-ignore
-    console.log(`server is listern on port ${server.address().port}`);
+    console.log(`server is listern on port ${PORT}`);
 })
 schedule.cronJob.start();
