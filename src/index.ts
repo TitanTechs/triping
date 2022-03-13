@@ -10,7 +10,8 @@ class Schedule {
         this.cronJob = new CronJob("*/5 * * * *", async () => {
             try {
                 await this.pingApis();
-                await this.pingItsSelf();
+                //TODO: Make sure it doesn't go down it's self too
+                // await this.pingItsSelf();
             } catch (e) {
                 console.error(e);
             }
@@ -28,13 +29,13 @@ class Schedule {
         }
     }
 
-    async pingItsSelf() {
-        const { statusCode } = await request(process.env.SELF_API);
+    // async pingItsSelf() {
+    //     const { statusCode } = await request(process.env.SELF_API);
 
-        if (statusCode !== 500) {
-            console.log({ statusCode });
-        }
-    }
+    //     if (statusCode !== 500) {
+    //         console.log({ statusCode });
+    //     }
+    // }
 }
 
 const schedule = new Schedule();
